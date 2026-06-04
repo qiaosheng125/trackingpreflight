@@ -1,0 +1,39 @@
+{
+  "url": "https://www.aiwallpaperprompts.com/",
+  "finalUrl": "https://www.aiwallpaperprompts.com/",
+  "resolvedAddresses": [
+    "216.198.79.1",
+    "64.29.17.1"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "pass",
+  "detected": {
+    "ga4Ids": [
+      "G-DC6K2C83Y2"
+    ],
+    "gtmIds": [],
+    "clarityIds": [
+      "x069827ts2"
+    ]
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 0,
+    "ga4Collect": 1,
+    "uaCollect": 0,
+    "clarityScript": 1,
+    "clarityCollect": 4,
+    "googleAdsConversion": 0
+  },
+  "warnings": [],
+  "failedRequests": [],
+  "abortedTrackingRequests": [
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-DC6K2C83Y2&gtm=45je65t1v9254173433za200zd9254173433&_p=1780371373338&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=550408694.1780371375&frm=0&pscdl=noapi&rcb=3&sr=1707x960&uaa=x86&uab=64&uafvl=Chromium%3B134.0.6998.36%7CNot%253AA-Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B134.0.6998.36&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=zh-cn&_s=1&tag_exp=0~115938466~115938468~119027223&sid=1780371375&sct=1&seg=0&dl=https%3A%2F%2Fwww.aiwallpaperprompts.com%2F&dt=AI%20Wallpaper%20Prompt%20Gallery%20-%204K%20AI%20Wallpaper%20Prompts&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2984",
+      "errorText": "net::ERR_ABORTED"
+    }
+  ],
+  "securityFindings": [],
+  "fixSuggestions": []
+}

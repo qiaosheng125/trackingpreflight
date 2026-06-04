@@ -1,0 +1,35 @@
+{
+  "url": "https://www.convertkit.com/",
+  "finalUrl": "https://kit.com/",
+  "resolvedAddresses": [
+    "18.117.34.15",
+    "3.130.16.247",
+    "18.116.158.18"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "fail",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "No GA4, GTM, or Clarity IDs were detected"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Install GA4, GTM, or Clarity before expecting analytics data."
+  ]
+}

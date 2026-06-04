@@ -1,0 +1,32 @@
+{
+  "url": "https://example.com/",
+  "finalUrl": "https://example.com/",
+  "resolvedAddresses": [
+    "104.20.23.154",
+    "172.66.147.243"
+  ],
+  "clickSelector": null,
+  "status": "fail",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "No GA4, GTM, or Clarity IDs were detected"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "fixSuggestions": [
+    "Install GA4, GTM, or Clarity before expecting analytics data."
+  ]
+}

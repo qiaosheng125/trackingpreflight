@@ -1,0 +1,63 @@
+{
+  "url": "https://www.typeform.com/",
+  "finalUrl": "https://www.typeform.com/",
+  "resolvedAddresses": [
+    "3.167.227.69",
+    "3.167.227.85",
+    "3.167.227.21",
+    "3.167.227.27"
+  ],
+  "clickSelector": null,
+  "clickSelectors": [],
+  "clickResult": null,
+  "clickResults": [],
+  "autoConsent": true,
+  "consentClickResults": [
+    {
+      "result": "clicked",
+      "method": "selector",
+      "selector": "#onetrust-accept-btn-handler",
+      "text": "Accept all cookies"
+    }
+  ],
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-N6F0VDRT9W"
+    ],
+    "gtmIds": [
+      "GTM-WH2ZQ3X"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 3,
+    "gtmScript": 1,
+    "ga4Collect": 1,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 1
+  },
+  "warnings": [
+    "Multiple gtag.js script requests detected",
+    "1 script or tracking requests failed"
+  ],
+  "failedRequests": [
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/853397325/?random=1780380682069&cv=11&fst=1780380682069&fmt=7&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be65t1v881501365z877526378za20gzb77526378zd77526378xea&gcs=G111&gcd=13r3r3r3r5l1&dma=0&tag_exp=0~115938466~115938468~118128922&u_w=1707&u_h=960&url=https%3A%2F%2Fwww.typeform.com%2F&rcb=15&label=yUezCKS-sZ0ZEM2e95YD&frm=0&tiba=Typeform%3A%20People-Friendly%20Forms%20and%20Surveys&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&uaa=x86&uab=64&uafvl=Chromium%3B134.0.6998.36%7CNot%253AA-Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B134.0.6998.36&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=CA&capi=1&gcu=1&auid=360494749.1780380682&gcl_ctr=1~0~0~0&data=ads_data_redaction%3Dfalse&category=acrcp_v1_512",
+      "errorText": "net::ERR_CONNECTION_CLOSED"
+    }
+  ],
+  "abortedTrackingRequests": [
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N6F0VDRT9W&gtm=45je65t1v877404044z877526378za20gzb77526378zd77526378&_p=1780380676544&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=1686591399&_eu=AAAAAGAC&are=1&cid=1900895627.1780380678&frm=0&gtm_up=1&pscdl=denied&rcb=14&sr=1707x960&uaa=x86&uab=64&uafvl=Chromium%3B134.0.6998.36%7CNot%253AA-Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B134.0.6998.36&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=zh-cn&gaf=2&_s=1&tag_exp=0~115938466~115938468&dl=https%3A%2F%2Fwww.typeform.com%2F&sid=1780380678&sct=1&seg=0&dt=Typeform%3A%20People-Friendly%20Forms%20and%20Surveys&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&ep.cb_company_industry=(Non-Company)&ep.cb_company_employee_range=(Non-Company)&ep.cb_company_tags=(Non-Company)&ep.cb_company_country_code=(Non-Company)&ep.cb_traffic_type=(Non-Company)&ep.cb_company_description=(Non-Company)&ep.cb_company_name=(Non-Company)&ep.consent_cookie_performance=false&ep.consent_cookie_functional=false&ep.consent_cookie_targeting=false&ep.content_group=public_site&ep.page=%2F&ep.content_group2=main&tfd=6434",
+      "errorText": "net::ERR_ABORTED"
+    }
+  ],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Check whether GA4 is installed both directly and through GTM.",
+    "Open the browser Network panel and inspect failed tracking script or collect requests."
+  ]
+}

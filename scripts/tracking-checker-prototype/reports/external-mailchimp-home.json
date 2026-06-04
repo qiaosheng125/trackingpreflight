@@ -1,0 +1,39 @@
+{
+  "url": "https://www.mailchimp.com/",
+  "finalUrl": "https://mailchimp.com/",
+  "resolvedAddresses": [
+    "23.50.227.124"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-N5HD1RTH6E"
+    ],
+    "gtmIds": [
+      "GTM-MCZTKL"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "GA4 ID found, but no gtag.js script request was observed during page load",
+    "GA4 ID found, but no GA4 collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Check whether the GA4 snippet is blocked, delayed, or only loaded after consent.",
+    "Verify that the GA4 data stream ID is correct and consent/banner settings are not blocking analytics."
+  ]
+}

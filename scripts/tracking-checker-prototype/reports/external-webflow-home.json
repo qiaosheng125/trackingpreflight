@@ -1,0 +1,43 @@
+{
+  "url": "https://www.webflow.com/",
+  "finalUrl": "https://webflow.com/",
+  "resolvedAddresses": [
+    "34.231.172.132",
+    "3.95.109.120",
+    "32.195.198.38"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-ZVKWSS7ZRF"
+    ],
+    "gtmIds": [
+      "GTM-55XXQM3F"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 2,
+    "gtmScript": 3,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "Multiple gtag.js script requests detected",
+    "Multiple GTM script requests detected",
+    "GA4 ID found, but no GA4 collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Check whether GA4 is installed both directly and through GTM.",
+    "Remove duplicate GTM snippets from the theme, layout, or plugin settings.",
+    "Verify that the GA4 data stream ID is correct and consent/banner settings are not blocking analytics."
+  ]
+}

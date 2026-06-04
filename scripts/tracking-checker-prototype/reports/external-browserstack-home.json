@@ -1,0 +1,38 @@
+{
+  "url": "https://www.browserstack.com/",
+  "finalUrl": "https://www.browserstack.com/",
+  "resolvedAddresses": [
+    "104.19.163.75",
+    "104.19.162.75"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [
+      "GTM-KX7NTRZ"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "GTM ID found, but no gtm.js script request was observed during page load",
+    "GTM container found, but no GA4, UA, or Clarity collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Check whether the GTM snippet is blocked by consent, CSP, tag manager settings, or conditional loading.",
+    "Open GTM Preview or Tag Assistant to verify which tags fire from this container and whether consent blocks them."
+  ]
+}

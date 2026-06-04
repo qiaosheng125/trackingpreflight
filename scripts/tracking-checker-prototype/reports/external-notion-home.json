@@ -1,0 +1,34 @@
+{
+  "url": "https://www.notion.com/",
+  "finalUrl": "https://www.notion.com/",
+  "resolvedAddresses": [
+    "208.103.161.2",
+    "208.103.161.1"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "fail",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "No GA4, GTM, or Clarity IDs were detected"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Install GA4, GTM, or Clarity before expecting analytics data."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "url": "https://www.airtable.com/",
+  "finalUrl": "https://www.airtable.com/",
+  "resolvedAddresses": [
+    "13.226.244.79",
+    "13.226.244.89",
+    "13.226.244.35",
+    "13.226.244.42"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-VJY8J9RFZM",
+      "G-MD9XNHKP59"
+    ],
+    "gtmIds": [
+      "GTM-NCLXNTS"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 3,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "Multiple GA4 IDs detected: G-VJY8J9RFZM, G-MD9XNHKP59",
+    "Multiple gtag.js script requests detected",
+    "GA4 ID found, but no GA4 collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Keep one primary GA4 Measurement ID unless duplicate installation is intentional.",
+    "Check whether GA4 is installed both directly and through GTM.",
+    "Verify that the GA4 data stream ID is correct and consent/banner settings are not blocking analytics."
+  ]
+}

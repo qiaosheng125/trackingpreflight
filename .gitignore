@@ -1,0 +1,12 @@
+.next
+node_modules
+.env*
+!.env.example
+dist
+out
+
+.vercel
+.cache
+admin-automation-log.jsonl
+
+.vercel

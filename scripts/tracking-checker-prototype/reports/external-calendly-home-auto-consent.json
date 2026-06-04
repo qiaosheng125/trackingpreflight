@@ -1,0 +1,47 @@
+{
+  "url": "https://www.calendly.com/",
+  "finalUrl": "https://calendly.com/",
+  "resolvedAddresses": [
+    "104.18.41.175",
+    "172.64.146.81"
+  ],
+  "clickSelector": null,
+  "clickSelectors": [],
+  "clickResult": null,
+  "clickResults": [],
+  "autoConsent": true,
+  "consentClickResults": [
+    {
+      "result": "not-found",
+      "method": "auto-consent",
+      "selector": "",
+      "text": ""
+    }
+  ],
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [
+      "GTM-W3RGHP8"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "GTM container found, but no GA4, UA, or Clarity collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Open GTM Preview or Tag Assistant to verify which tags fire from this container and whether consent blocks them."
+  ]
+}

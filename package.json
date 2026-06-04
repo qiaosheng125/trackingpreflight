@@ -1,0 +1,30 @@
+{
+  "name": "tracking-install-checker",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:local-scan": "set ENABLE_LOCAL_TRACKING_SCAN=1&& next dev --port 3008",
+    "build": "next build --webpack",
+    "start": "next start",
+    "smoke": "node scripts/smoke-check.mjs",
+    "test:api": "node --experimental-strip-types scripts/test-api-guards.mjs",
+    "test:mapper": "node --experimental-strip-types scripts/test-report-mapper.mjs",
+    "test:running-api": "node scripts/test-running-api.mjs"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  }
+}

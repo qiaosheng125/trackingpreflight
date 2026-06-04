@@ -1,0 +1,52 @@
+{
+  "url": "https://www.shopify.com/",
+  "finalUrl": "https://www.shopify.com/",
+  "resolvedAddresses": [
+    "104.18.42.163",
+    "172.64.145.93"
+  ],
+  "clickSelector": null,
+  "clickSelectors": [],
+  "clickResult": null,
+  "clickResults": [],
+  "autoConsent": true,
+  "consentClickResults": [
+    {
+      "result": "not-found",
+      "method": "auto-consent",
+      "selector": "",
+      "text": ""
+    }
+  ],
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-W6NECZNE63",
+      "G-B7X5MKCR35"
+    ],
+    "gtmIds": [
+      "GTM-TZ26LP8"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "Multiple GA4 IDs detected: G-W6NECZNE63, G-B7X5MKCR35",
+    "GA4 ID found, but no GA4 collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Keep one primary GA4 Measurement ID unless duplicate installation is intentional.",
+    "Verify that the GA4 data stream ID is correct and consent/banner settings are not blocking analytics."
+  ]
+}

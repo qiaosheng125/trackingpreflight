@@ -1,0 +1,20 @@
+{
+  "url": "https://example.com",
+  "clickSelector": null,
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [],
+  "failedRequests": []
+}

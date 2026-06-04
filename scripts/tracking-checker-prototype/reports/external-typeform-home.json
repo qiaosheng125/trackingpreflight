@@ -1,0 +1,45 @@
+{
+  "url": "https://www.typeform.com/",
+  "finalUrl": "https://www.typeform.com/",
+  "resolvedAddresses": [
+    "3.167.227.85",
+    "3.167.227.27",
+    "3.167.227.21",
+    "3.167.227.69"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-N6F0VDRT9W"
+    ],
+    "gtmIds": [
+      "GTM-WH2ZQ3X"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 3,
+    "gtmScript": 1,
+    "ga4Collect": 1,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "Multiple gtag.js script requests detected"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N6F0VDRT9W&gtm=45je65t1v877404044z877526378za20gzb77526378zd77526378&_p=1780377659119&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=1422638676&_eu=AAAAAGAC&are=1&cid=60505772.1780377662&frm=0&gtm_up=1&pscdl=denied&rcb=19&sr=1707x960&uaa=x86&uab=64&uafvl=Chromium%3B134.0.6998.36%7CNot%253AA-Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B134.0.6998.36&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=zh-cn&gaf=2&_s=1&tag_exp=0~115616985~115938465~115938468~117776794&dl=https%3A%2F%2Fwww.typeform.com%2F&sid=1780377661&sct=1&seg=0&dt=Typeform%3A%20People-Friendly%20Forms%20and%20Surveys&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&ep.cb_company_industry=(Non-Company)&ep.cb_company_employee_range=(Non-Company)&ep.cb_company_tags=(Non-Company)&ep.cb_company_country_code=(Non-Company)&ep.cb_traffic_type=(Non-Company)&ep.cb_company_description=(Non-Company)&ep.cb_company_name=(Non-Company)&ep.consent_cookie_performance=false&ep.consent_cookie_functional=false&ep.consent_cookie_targeting=false&ep.content_group=public_site&ep.page=%2F&ep.content_group2=main&tfd=7949",
+      "errorText": "net::ERR_ABORTED"
+    }
+  ],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Check whether GA4 is installed both directly and through GTM."
+  ]
+}

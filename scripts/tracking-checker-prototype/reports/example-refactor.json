@@ -1,0 +1,47 @@
+{
+  "url": "https://example.com/",
+  "finalUrl": "https://example.com/",
+  "resolvedAddresses": [
+    "172.66.147.243",
+    "104.20.23.154"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "fail",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 0,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "No GA4, GTM, or Clarity IDs were detected",
+    "2 blocked or private remote address was observed after navigation"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [
+    {
+      "url": "https://example.com/",
+      "remoteAddress": "127.0.0.1",
+      "reason": "blocked remote address observed after navigation"
+    },
+    {
+      "url": "https://example.com/favicon.ico",
+      "remoteAddress": "127.0.0.1",
+      "reason": "blocked remote address observed after navigation"
+    }
+  ],
+  "fixSuggestions": [
+    "Install GA4, GTM, or Clarity before expecting analytics data.",
+    "Do not scan URLs that redirect to private, localhost, or metadata addresses."
+  ]
+}

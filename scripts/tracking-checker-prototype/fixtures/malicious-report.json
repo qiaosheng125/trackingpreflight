@@ -1,0 +1,24 @@
+{
+  "url": "https://example.com/?q=<script>alert(1)</script>",
+  "finalUrl": "https://example.com/?q=<script>alert(1)</script>",
+  "status": "warning",
+  "detected": {
+    "ga4Ids": ["G-ABC123456"],
+    "gtmIds": ["GTM-ABCD123"],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": ["Synthetic warning with <img src=x onerror=alert(1)>"],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": ["Do not render <script>alert(1)</script> as HTML"]
+}

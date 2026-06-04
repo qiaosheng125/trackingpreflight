@@ -1,0 +1,38 @@
+{
+  "url": "https://www.zapier.com/",
+  "finalUrl": "https://zapier.com/",
+  "resolvedAddresses": [
+    "13.33.187.86",
+    "13.33.187.25",
+    "13.33.187.12",
+    "13.33.187.121"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [],
+    "gtmIds": [
+      "GTM-K7GFJTV"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 0,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "GTM container found, but no GA4, UA, or Clarity collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Open GTM Preview or Tag Assistant to verify which tags fire from this container and whether consent blocks them."
+  ]
+}

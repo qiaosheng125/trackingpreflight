@@ -1,0 +1,24 @@
+{
+  "url": "https://www.chatexportchecker.com",
+  "clickSelector": null,
+  "detected": {
+    "ga4Ids": [
+      "G-ZESK2XP971"
+    ],
+    "gtmIds": [],
+    "clarityIds": [
+      "wz83wffiyf"
+    ]
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 0,
+    "ga4Collect": 1,
+    "uaCollect": 0,
+    "clarityScript": 1,
+    "clarityCollect": 1,
+    "googleAdsConversion": 0
+  },
+  "warnings": [],
+  "failedRequests": []
+}

@@ -1,0 +1,38 @@
+{
+  "url": "https://www.framer.com/",
+  "finalUrl": "https://www.framer.com/",
+  "resolvedAddresses": [
+    "31.43.160.19",
+    "31.43.161.19"
+  ],
+  "clickSelector": null,
+  "clickResult": null,
+  "status": "warning",
+  "detected": {
+    "ga4Ids": [
+      "G-QZ2MPXED80"
+    ],
+    "gtmIds": [
+      "GTM-KQFN6BX"
+    ],
+    "clarityIds": []
+  },
+  "requests": {
+    "ga4Script": 1,
+    "gtmScript": 1,
+    "ga4Collect": 0,
+    "uaCollect": 0,
+    "clarityScript": 0,
+    "clarityCollect": 0,
+    "googleAdsConversion": 0
+  },
+  "warnings": [
+    "GA4 ID found, but no GA4 collect request was observed during page load"
+  ],
+  "failedRequests": [],
+  "abortedTrackingRequests": [],
+  "securityFindings": [],
+  "fixSuggestions": [
+    "Verify that the GA4 data stream ID is correct and consent/banner settings are not blocking analytics."
+  ]
+}

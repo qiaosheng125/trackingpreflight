@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tracking Install Checker - Product Prototype</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #17202a;
+      --muted: #60717f;
+      --border: #d8e1e8;
+      --blue: #1f5eff;
+      --blue-2: #e8efff;
+      --green: #137a4a;
+      --green-bg: #e7f6ee;
+      --amber: #9a6200;
+      --amber-bg: #fff4d8;
+      --red: #a33a3a;
+      --red-bg: #fde9e9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, select {
+      font: inherit;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 26px 18px 54px;
+    }
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .header {
+      margin-bottom: 18px;
+    }
+    .eyebrow {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    p { margin: 0; }
+    .lead {
+      max-width: 760px;
+      margin-top: 10px;
+      color: #2d3a45;
+      font-size: 18px;
+    }
+    .formGrid {
+      display: grid;
+      gap: 14px;
+    }
+    label {
+      display: grid;
+      gap: 7px;
+      color: #22313f;
+      font-weight: 700;
+    }
+    label span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      padding: 10px 12px;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(31, 94, 255, .12);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .toggleRow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface-2);
+    }
+    .toggleRow input {
+      width: 20px;
+      min-height: 20px;
+      accent-color: var(--blue);
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .primaryBtn, .secondaryBtn {
+      min-height: 44px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .primaryBtn {
+      background: var(--blue);
+      color: #fff;
+    }
+    .secondaryBtn {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .status {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .status.pass { color: var(--green); background: var(--green-bg); }
+    .status.warning { color: var(--amber); background: var(--amber-bg); }
+    .status.fail { color: var(--red); background: var(--red-bg); }
+    .reportHeader {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .reportTitle {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.06;
+    }
+    .urlLine {
+      color: var(--muted);
+      word-break: break-all;
+      font-size: 14px;
+    }
+    .metricGrid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .metricBox {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+    .metricBox span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .metricBox strong {
+      font-size: 28px;
+      line-height: 1;
+    }
+    .sectionGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .wide { grid-column: 1 / -1; }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 7px 0; }
+    .chipRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-2);
+      padding: 7px 10px;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .sampleTabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .sampleTabs button {
+      min-height: 36px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+    }
+    .sampleTabs button.active {
+      border-color: var(--blue);
+      background: var(--blue-2);
+      color: #143ca2;
+      font-weight: 800;
+    }
+    .loading {
+      display: none;
+      padding: 18px;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+    }
+    .loading.active { display: block; }
+    @media (max-width: 900px) {
+      main { padding: 18px 12px 40px; }
+      .shell, .sectionGrid, .metricGrid, .row { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="header">
+      <div class="eyebrow">Prototype / not a production service</div>
+      <h1>Tracking Install Checker</h1>
+      <p class="lead">Check whether GA4, GTM, and Clarity actually load and send visible tracking requests on a public page.</p>
+    </header>
+
+    <div class="shell">
+      <section class="panel" aria-labelledby="check-form-title">
+        <h2 id="check-form-title">Run a preflight check</h2>
+        <form class="formGrid" id="checkForm">
+          <label>
+            Public page URL
+            <input id="urlInput" type="url" value="https://www.typeform.com/" placeholder="https://www.example.com/" required>
+          </label>
+          <div class="row">
+            <label>
+              Consent selector
+              <span>Optional, advanced</span>
+              <input id="consentInput" type="text" value="#onetrust-accept-btn-handler" placeholder=".accept-cookies">
+            </label>
+            <label>
+              Event selector
+              <span>Optional, advanced</span>
+              <input id="eventInput" type="text" placeholder=".download-button">
+            </label>
+          </div>
+          <label class="toggleRow">
+            <span>
+              Try auto consent
+              <small class="note">Experimental. The report will show what was clicked.</small>
+            </span>
+            <input id="autoConsentInput" type="checkbox" checked>
+          </label>
+          <label>
+            Preview sample
+            <select id="sampleSelect">
+              <option value="warningConsent">Warning with consent click</option>
+              <option value="pass">Pass</option>
+              <option value="warning">Warning without collect</option>
+              <option value="fail">Page cannot be scanned</option>
+            </select>
+          </label>
+          <div class="actions">
+            <button class="primaryBtn" type="submit">Run check</button>
+            <button class="secondaryBtn" type="button" id="resetBtn">Reset sample</button>
+          </div>
+          <p class="note">Free entry should be limited to 2 checks per minute, 20 per day, and 1-hour cache for the same URL.</p>
+        </form>
+        <div class="sampleTabs" aria-label="Report samples">
+          <button type="button" data-sample="warningConsent" class="active">Consent warning</button>
+          <button type="button" data-sample="pass">Pass</button>
+          <button type="button" data-sample="warning">Warning</button>
+          <button type="button" data-sample="fail">Fail</button>
+        </div>
+      </section>
+
+      <section aria-live="polite">
+        <div class="loading" id="loadingBox">Running browser scan, listening for script and collect requests...</div>
+        <article class="panel" id="reportPanel"></article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const samples = {
+      warningConsent: {
+        url: "https://www.typeform.com/",
+        finalUrl: "https://www.typeform.com/",
+        status: "warning",
+        title: "Tracking setup needs review",
+        summary: "GA4 (G-N6F0VDRT9W), GTM (GTM-WH2ZQ3X) were detected, and GA4 collect was observed, but one or more setup warnings should be reviewed.",
+        detected: { ga4Ids: ["G-N6F0VDRT9W"], gtmIds: ["GTM-WH2ZQ3X"], clarityIds: [] },
+        requests: { ga4Script: 3, gtmScript: 1, clarityScript: 0, ga4Collect: 1, uaCollect: 0, clarityCollect: 0, googleAdsConversion: 1 },
+        autoConsent: true,
+        consentClickResults: [{ result: "clicked", method: "selector", selector: "#onetrust-accept-btn-handler", text: "Accept all cookies" }],
+        findings: [
+          "Detected tools: GA4 (G-N6F0VDRT9W), GTM (GTM-WH2ZQ3X).",
+          "Observed requests: GA4 collect 1, UA collect 0, Clarity collect 0.",
+          "Auto consent clicked: Accept all cookies.",
+          "Multiple gtag.js script requests detected",
+          "1 script or tracking requests failed"
+        ],
+        nextSteps: [
+          "Check whether GA4 is installed both directly and through GTM.",
+          "Open the browser Network panel and inspect failed tracking script or collect requests."
+        ]
+      },
+      pass: {
+        url: "https://www.aiwallpaperprompts.com/",
+        finalUrl: "https://www.aiwallpaperprompts.com/",
+        status: "pass",
+        title: "Tracking requests were observed",
+        summary: "GA4 (G-DC6K2C83Y2), Clarity (x069827ts2) appeared to load and send at least one analytics request during this scan.",
+        detected: { ga4Ids: ["G-DC6K2C83Y2"], gtmIds: [], clarityIds: ["x069827ts2"] },
+        requests: { ga4Script: 1, gtmScript: 0, clarityScript: 1, ga4Collect: 1, uaCollect: 0, clarityCollect: 2, googleAdsConversion: 0 },
+        autoConsent: false,
+        consentClickResults: [],
+        findings: [
+          "Detected tools: GA4 (G-DC6K2C83Y2), Clarity (x069827ts2).",
+          "Observed requests: GA4 collect 1, UA collect 0, Clarity collect 2."
+        ],
+        nextSteps: ["Open the vendor dashboard and confirm the event appears in realtime or debug reporting."]
+      },
+      warning: {
+        url: "https://www.browserstack.com/",
+        finalUrl: "https://www.browserstack.com/",
+        status: "warning",
+        title: "Tracking tools were found, but no collect request was observed",
+        summary: "GTM (GTM-KX7NTRZ) was detected, but the scanner did not observe a GA4, UA, or Clarity collect request during the scan window.",
+        detected: { ga4Ids: [], gtmIds: ["GTM-KX7NTRZ"], clarityIds: [] },
+        requests: { ga4Script: 0, gtmScript: 0, clarityScript: 0, ga4Collect: 0, uaCollect: 0, clarityCollect: 0, googleAdsConversion: 0 },
+        autoConsent: true,
+        consentClickResults: [{ result: "not-found", method: "auto-consent", selector: "", text: "" }],
+        findings: [
+          "Detected tools: GTM (GTM-KX7NTRZ).",
+          "Observed requests: GA4 collect 0, UA collect 0, Clarity collect 0.",
+          "Auto consent was enabled, but no supported consent button was found.",
+          "GTM ID found, but no gtm.js script request was observed during page load",
+          "GTM container found, but no GA4, UA, or Clarity collect request was observed during page load"
+        ],
+        nextSteps: [
+          "Check whether the GTM snippet is blocked by consent, CSP, tag manager settings, or conditional loading.",
+          "If the page has a cookie banner, provide the consent button selector manually and scan again."
+        ]
+      },
+      fail: {
+        url: "https://www.hotjar.com/",
+        finalUrl: "chrome-error://chromewebdata/",
+        status: "fail",
+        title: "The page could not be scanned",
+        summary: "The browser ended on an unsupported internal page before the tracking check could be completed.",
+        detected: { ga4Ids: [], gtmIds: [], clarityIds: [] },
+        requests: { ga4Script: 0, gtmScript: 0, clarityScript: 0, ga4Collect: 0, uaCollect: 0, clarityCollect: 0, googleAdsConversion: 0 },
+        autoConsent: false,
+        consentClickResults: [],
+        findings: ["Navigation ended at an unsupported browser URL: chrome-error:"],
+        nextSteps: ["Check whether the submitted URL redirects to a blocked, unsupported, or browser-internal page."]
+      }
+    };
+
+    const checks = [
+      "Public page load for the submitted URL",
+      "GA4, GTM, and Clarity identifiers visible during the scan",
+      "Script requests for gtag.js, gtm.js, and Clarity",
+      "Observed GA4, Universal Analytics, and Clarity collect requests",
+      "Optional consent and event click selectors"
+    ];
+    const notChecked = [
+      "GA4 dashboard processing or attribution correctness",
+      "Shopify checkout or purchase events behind protected flows",
+      "Logged-in pages, private pages, or user-specific journeys",
+      "Meta, TikTok, Pinterest, LinkedIn, and other ad pixels in this MVP"
+    ];
+    const caveats = [
+      "A missing collect request can be caused by consent settings, delayed tags, region rules, CSP, or tag conditions.",
+      "This does not prove whether GA4, GTM, or Clarity data was finally processed in the vendor dashboard."
+    ];
+
+    const reportPanel = document.getElementById("reportPanel");
+    const loadingBox = document.getElementById("loadingBox");
+    const sampleSelect = document.getElementById("sampleSelect");
+    const urlInput = document.getElementById("urlInput");
+    const autoConsentInput = document.getElementById("autoConsentInput");
+    const tabs = Array.from(document.querySelectorAll("[data-sample]"));
+
+    function renderReport(report) {
+      reportPanel.innerHTML = `
+        <div class="reportHeader">
+          <div class="urlLine">Scanned URL: ${escapeHtml(report.finalUrl || report.url)}</div>
+          <span class="status ${escapeHtml(report.status)}">${escapeHtml(report.status)}</span>
+          <h2 class="reportTitle">${escapeHtml(report.title)}</h2>
+          <p>${escapeHtml(report.summary)}</p>
+        </div>
+        <div class="metricGrid">
+          <div class="metricBox"><span>GA4 collect</span><strong>${number(report.requests.ga4Collect)}</strong></div>
+          <div class="metricBox"><span>Clarity collect</span><strong>${number(report.requests.clarityCollect)}</strong></div>
+          <div class="metricBox"><span>GTM scripts</span><strong>${number(report.requests.gtmScript)}</strong></div>
+        </div>
+        <div class="sectionGrid">
+          <section class="panel"><h3>Detected Tools</h3><div class="chipRow">${renderTools(report.detected)}</div></section>
+          <section class="panel"><h3>Consent Clicks</h3>${renderConsent(report)}</section>
+          <section class="panel wide"><h3>Findings</h3>${renderList(report.findings)}</section>
+          <section class="panel wide"><h3>Recommended Next Steps</h3>${renderList(report.nextSteps)}</section>
+          <section class="panel"><h3>What This Checks</h3>${renderList(checks)}</section>
+          <section class="panel"><h3>Not Checked</h3>${renderList(notChecked)}</section>
+          <section class="panel wide"><h3>Important Limits</h3>${renderList(caveats)}</section>
+        </div>
+      `;
+    }
+
+    function renderTools(detected) {
+      const tools = [];
+      for (const id of detected.ga4Ids || []) tools.push("GA4 " + id);
+      for (const id of detected.gtmIds || []) tools.push("GTM " + id);
+      for (const id of detected.clarityIds || []) tools.push("Clarity " + id);
+      if (!tools.length) return '<span class="chip">None detected in supported tools</span>';
+      return tools.map((tool) => `<span class="chip">${escapeHtml(tool)}</span>`).join("");
+    }
+
+    function renderConsent(report) {
+      if (!report.autoConsent) return '<p class="note">Auto consent was not enabled for this scan.</p>';
+      const result = report.consentClickResults[0];
+      if (!result) return '<p class="note">Auto consent was enabled, but no click attempt was recorded.</p>';
+      const line = [
+        "Result: " + (result.result || "unknown"),
+        result.method ? "method: " + result.method : "",
+        result.selector ? "selector: " + result.selector : "",
+        result.text ? "text: " + result.text : ""
+      ].filter(Boolean).join(" | ");
+      return `<p>${escapeHtml(line)}</p>`;
+    }
+
+    function renderList(items) {
+      return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    }
+
+    function loadSample(name) {
+      const report = samples[name] || samples.warningConsent;
+      sampleSelect.value = name;
+      urlInput.value = report.url;
+      autoConsentInput.checked = report.autoConsent;
+      tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.sample === name));
+      renderReport(report);
+    }
+
+    document.getElementById("checkForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      loadingBox.classList.add("active");
+      reportPanel.style.opacity = ".45";
+      setTimeout(() => {
+        loadingBox.classList.remove("active");
+        reportPanel.style.opacity = "1";
+        const report = structuredClone(samples[sampleSelect.value]);
+        report.url = urlInput.value.trim() || report.url;
+        report.finalUrl = report.url;
+        report.autoConsent = autoConsentInput.checked;
+        if (!report.autoConsent) report.consentClickResults = [];
+        renderReport(report);
+      }, 550);
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => loadSample(sampleSelect.value));
+    sampleSelect.addEventListener("change", () => loadSample(sampleSelect.value));
+    tabs.forEach((tab) => tab.addEventListener("click", () => loadSample(tab.dataset.sample)));
+
+    function number(value) {
+      return Number(value || 0);
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    loadSample("warningConsent");
+  </script>
+</body>
+</html>
